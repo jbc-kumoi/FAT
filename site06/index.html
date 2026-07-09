@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせ - Site06</title>
+</head>
+<body>
+<h1>お問い合わせフォーム</h1>
+<form id="contactForm">
+  <input type="hidden" name="site_id" value="site01">
+  <p><label>会社名: <input type="text" name="company"></label></p>
+  <p><label>お名前: <input type="text" name="name" required></label></p>
+  <p><label>メールアドレス: <input type="email" name="email" required></label></p>
+  <p><label>お問い合わせ内容:<br><textarea name="message" rows="5" cols="40"></textarea></label></p>
+  <button type="submit">送信</button>
+</form>
+<p id="result"></p>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>
