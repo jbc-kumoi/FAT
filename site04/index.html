@@ -2,19 +2,116 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>お問い合わせ - Site04</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #eef1f5;
+    font-family: "Yu Mincho", "Georgia", serif;
+    color: #1e293b;
+  }
+  header {
+    background: #0f2a4a;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    letter-spacing: 0.08em;
+  }
+  header h1 { margin: 0; font-size: 20px; font-weight: 700; }
+  header p { margin: 6px 0 0; font-size: 12px; color: #9db3cc; }
+  .wrap {
+    max-width: 560px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    padding: 36px 40px;
+  }
+  .wrap > p.intro {
+    font-size: 13px;
+    color: #475569;
+    margin: 0 0 24px;
+    line-height: 1.7;
+    border-left: 3px solid #0f2a4a;
+    padding-left: 12px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  table td { padding: 12px 0; vertical-align: top; }
+  table td.label {
+    width: 160px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f2a4a;
+    padding-top: 20px;
+  }
+  table td.label span.req { color: #b91c1c; margin-left: 4px; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #94a3b8;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fdfdfd;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #0f2a4a;
+  }
+  textarea { resize: vertical; }
+  .btn-row { text-align: center; margin-top: 20px; }
+  button {
+    padding: 12px 48px;
+    background: #0f2a4a;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+  button:hover { background: #163e69; }
+  #result {
+    margin-top: 16px;
+    font-size: 13px;
+    text-align: center;
+    color: #166534;
+  }
+</style>
 </head>
 <body>
-<h1>お問い合わせ - Site04</h1>
-<form id="contactForm">
-  <input type="hidden" name="site_id" value="site01">
-  <p><label>会社名: <input type="text" name="company"></label></p>
-  <p><label>お名前: <input type="text" name="name" required></label></p>
-  <p><label>メールアドレス: <input type="email" name="email" required></label></p>
-  <p><label>お問い合わせ内容:<br><textarea name="message" rows="5" cols="40"></textarea></label></p>
-  <button type="submit">送信</button>
-</form>
-<p id="result"></p>
+<header>
+  <h1>SITE04 CORPORATE</h1>
+  <p>OFFICIAL CONTACT FORM</p>
+</header>
+<div class="wrap">
+  <p class="intro">お問い合わせいただきありがとうございます。下記フォームに必要事項をご記入の上、送信ボタンを押してください。担当者より折り返しご連絡いたします。</p>
+  <form id="contactForm">
+    <input type="hidden" name="site_id" value="site04">
+    <table>
+      <tr>
+        <td class="label">会社名</td>
+        <td><input type="text" name="company"></td>
+      </tr>
+      <tr>
+        <td class="label">お名前<span class="req">必須</span></td>
+        <td><input type="text" name="name" required></td>
+      </tr>
+      <tr>
+        <td class="label">メールアドレス<span class="req">必須</span></td>
+        <td><input type="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td class="label">お問い合わせ内容</td>
+        <td><textarea name="message" rows="6"></textarea></td>
+      </tr>
+    </table>
+    <div class="btn-row">
+      <button type="submit">送信</button>
+    </div>
+  </form>
+  <p id="result"></p>
+</div>
 
 <script>
 document.getElementById('contactForm').addEventListener('submit', async function(e) {

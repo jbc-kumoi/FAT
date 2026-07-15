@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>お問い合わせ - Site05</title>
+<title>お問い合わせ - Site17</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -12,98 +12,103 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff1f5;
-    font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, sans-serif;
-    color: #6b4a4a;
+    background: #ece2cf;
+    font-family: "Georgia", "Yu Mincho", serif;
+    color: #4a3c2a;
   }
   .card {
     width: 100%;
-    max-width: 440px;
+    max-width: 480px;
     margin: 24px;
-    background: #fffaf5;
-    border-radius: 32px;
-    box-shadow: 0 12px 0 #ffd6e0, 0 12px 24px rgba(0,0,0,0.06);
-    padding: 36px 32px;
+    background: #f7f0e2;
+    border: 1px solid #b8a488;
+    box-shadow: 0 0 0 6px #ece2cf, 0 6px 20px rgba(74, 60, 42, 0.2);
+    padding: 40px 40px;
   }
   h1 {
-    font-size: 24px;
-    margin: 0 0 4px;
-    color: #f472a0;
+    font-size: 22px;
     text-align: center;
+    margin: 0 0 4px;
+    letter-spacing: 0.05em;
   }
   .sub {
-    margin: 0 0 24px;
-    font-size: 13px;
     text-align: center;
-    color: #c58a9a;
+    margin: 0 0 12px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: #8a7455;
   }
-  .field { margin-bottom: 16px; }
+  hr {
+    border: none;
+    border-top: 1px solid #b8a488;
+    margin: 0 0 24px;
+  }
+  .field { margin-bottom: 20px; }
   label {
     display: block;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 12px;
     margin-bottom: 6px;
-    color: #e0658a;
+    color: #6b5a3f;
   }
   input[type="text"], input[type="email"], textarea {
     width: 100%;
-    padding: 10px 14px;
-    border: 2px solid #ffd6e0;
-    border-radius: 16px;
+    padding: 8px 10px;
+    border: 1px solid #b8a488;
+    background: #fffdf7;
     font-size: 14px;
     font-family: inherit;
-    background: #fff;
+    color: #4a3c2a;
   }
   input:focus, textarea:focus {
     outline: none;
-    border-color: #f472a0;
+    border-color: #7a5c33;
   }
   textarea { resize: vertical; }
+  .btn-row { text-align: center; margin-top: 24px; }
   button {
-    width: 100%;
-    padding: 12px;
-    background: #f472a0;
-    color: #fff;
+    padding: 10px 36px;
+    background: #6b5a3f;
+    color: #f7f0e2;
     border: none;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
     cursor: pointer;
-    box-shadow: 0 4px 0 #d94f80;
   }
-  button:hover { background: #ec6ba0; }
+  button:hover { background: #4a3c2a; }
   #result {
-    margin-top: 14px;
+    margin-top: 16px;
     font-size: 13px;
     text-align: center;
-    color: #e0658a;
-    font-weight: 700;
+    color: #6b5a3f;
   }
 </style>
 </head>
 <body>
 <div class="card">
-  <h1>♡ お問い合わせ ♡</h1>
-  <p class="sub">Site05 へのご連絡はこちらからどうぞ！</p>
+  <h1>お問い合わせ</h1>
+  <p class="sub">SITE17 GAZETTE</p>
+  <hr>
   <form id="contactForm">
-    <input type="hidden" name="site_id" value="site05">
+    <input type="hidden" name="site_id" value="site17">
     <div class="field">
       <label>会社名</label>
       <input type="text" name="company">
     </div>
     <div class="field">
-      <label>お名前 ◎必須</label>
+      <label>お名前（必須）</label>
       <input type="text" name="name" required>
     </div>
     <div class="field">
-      <label>メールアドレス ◎必須</label>
+      <label>メールアドレス（必須）</label>
       <input type="email" name="email" required>
     </div>
     <div class="field">
       <label>お問い合わせ内容</label>
       <textarea name="message" rows="5"></textarea>
     </div>
-    <button type="submit">送信する ♪</button>
+    <div class="btn-row">
+      <button type="submit">送信</button>
+    </div>
   </form>
   <p id="result"></p>
 </div>

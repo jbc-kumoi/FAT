@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>お問い合わせ - Site05</title>
+<title>お問い合わせ - Site14</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -12,98 +12,112 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff1f5;
-    font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, sans-serif;
-    color: #6b4a4a;
+    background: linear-gradient(180deg, #2e1a47 0%, #ff71ce 100%);
+    font-family: "Futura", "Trebuchet MS", sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
   }
   .card {
+    position: relative;
     width: 100%;
-    max-width: 440px;
+    max-width: 460px;
     margin: 24px;
-    background: #fffaf5;
-    border-radius: 32px;
-    box-shadow: 0 12px 0 #ffd6e0, 0 12px 24px rgba(0,0,0,0.06);
+    background: rgba(15, 5, 30, 0.55);
+    border: 2px solid #01cdfe;
+    border-radius: 10px;
     padding: 36px 32px;
+    box-shadow: 0 0 30px rgba(1, 205, 254, 0.4);
   }
   h1 {
-    font-size: 24px;
-    margin: 0 0 4px;
-    color: #f472a0;
+    font-size: 28px;
     text-align: center;
+    margin: 0 0 4px;
+    color: #05ffa1;
+    text-shadow: 2px 2px 0 #ff71ce;
+    letter-spacing: 0.05em;
   }
   .sub {
-    margin: 0 0 24px;
-    font-size: 13px;
     text-align: center;
-    color: #c58a9a;
+    margin: 0 0 28px;
+    font-size: 13px;
+    color: #01cdfe;
   }
-  .field { margin-bottom: 16px; }
+  .field { margin-bottom: 18px; }
   label {
     display: block;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 12px;
     margin-bottom: 6px;
-    color: #e0658a;
+    color: #ff71ce;
   }
   input[type="text"], input[type="email"], textarea {
     width: 100%;
-    padding: 10px 14px;
-    border: 2px solid #ffd6e0;
-    border-radius: 16px;
-    font-size: 14px;
+    padding: 9px 12px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid #01cdfe;
+    border-radius: 6px;
+    font-size: 13px;
     font-family: inherit;
-    background: #fff;
+    color: #fff;
   }
   input:focus, textarea:focus {
     outline: none;
-    border-color: #f472a0;
+    border-color: #05ffa1;
   }
   textarea { resize: vertical; }
   button {
     width: 100%;
     padding: 12px;
-    background: #f472a0;
-    color: #fff;
+    background: #ff71ce;
+    color: #2e1a47;
     border: none;
-    border-radius: 999px;
+    border-radius: 6px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 0 #d94f80;
   }
-  button:hover { background: #ec6ba0; }
+  button:hover { background: #05ffa1; }
   #result {
-    margin-top: 14px;
+    margin-top: 16px;
     font-size: 13px;
     text-align: center;
-    color: #e0658a;
-    font-weight: 700;
+    color: #05ffa1;
   }
 </style>
 </head>
 <body>
 <div class="card">
-  <h1>♡ お問い合わせ ♡</h1>
-  <p class="sub">Site05 へのご連絡はこちらからどうぞ！</p>
+  <h1>CONTACT</h1>
+  <p class="sub">✧ Site14 ✧</p>
   <form id="contactForm">
-    <input type="hidden" name="site_id" value="site05">
+    <input type="hidden" name="site_id" value="site14">
     <div class="field">
       <label>会社名</label>
       <input type="text" name="company">
     </div>
     <div class="field">
-      <label>お名前 ◎必須</label>
+      <label>お名前（必須）</label>
       <input type="text" name="name" required>
     </div>
     <div class="field">
-      <label>メールアドレス ◎必須</label>
+      <label>メールアドレス（必須）</label>
       <input type="email" name="email" required>
     </div>
     <div class="field">
       <label>お問い合わせ内容</label>
       <textarea name="message" rows="5"></textarea>
     </div>
-    <button type="submit">送信する ♪</button>
+    <button type="submit">送信</button>
   </form>
   <p id="result"></p>
 </div>
