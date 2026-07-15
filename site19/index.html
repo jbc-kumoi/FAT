@@ -32,9 +32,19 @@
   }
   h1::before { content: "⚓ "; }
   .sub {
-    margin: 0 0 26px;
+    margin: 0 0 6px;
     font-size: 13px;
     color: #5c7a8c;
+  }
+  .notice {
+    margin: 0 0 22px;
+    padding: 10px 14px;
+    background: #fef2f2;
+    border: 1px solid #f3a6a6;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #b91c1c;
   }
   .field { margin-bottom: 18px; }
   label {
@@ -83,6 +93,7 @@
 <div class="card">
   <h1>お問い合わせ</h1>
   <p class="sub">Site19 へのご連絡はこちらから。</p>
+  <p class="notice">勧誘目的での連絡はお断りしておりますので、あらかじめご了承ください。</p>
   <form id="contactForm">
     <input type="hidden" name="site_id" value="site19">
     <div class="field">

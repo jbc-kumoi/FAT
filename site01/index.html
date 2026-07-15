@@ -31,10 +31,21 @@
     color: #111827;
   }
   .sub {
-    margin: 0 0 28px;
+    margin: 0 0 6px;
     font-size: 14px;
     color: #6b7280;
   }
+  .notice {
+    margin: 0 0 24px;
+    padding: 10px 14px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #b91c1c;
+  }
+  .notice::before { content: "※ "; }
   .field { margin-bottom: 18px; }
   label {
     display: block;
@@ -83,6 +94,7 @@
 <div class="card">
   <h1>お問い合わせ</h1>
   <p class="sub">Site01 へのご質問はこちらからお気軽にどうぞ。</p>
+  <p class="notice">当社への営業をお断りしております。</p>
   <form id="contactForm">
     <input type="hidden" name="site_id" value="site01">
     <div class="field">

@@ -31,10 +31,21 @@
   }
   h1::before { content: "$ "; color: #6b7280; }
   .sub {
-    margin: 0 0 24px;
+    margin: 0 0 4px;
     font-size: 13px;
     color: #6b7280;
   }
+  .notice {
+    margin: 0 0 24px;
+    padding: 10px 12px;
+    background: #2a0f0f;
+    border: 1px solid #f87171;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #f87171;
+  }
+  .notice::before { content: "!! "; color: #f87171; }
   .field { margin-bottom: 16px; }
   label {
     display: block;
@@ -83,6 +94,7 @@
 <div class="card">
   <h1>contact --site02</h1>
   <p class="sub">// お問い合わせ内容を送信してください</p>
+  <p class="notice">当社へ営業禁止となっておりますため、十分ご注意ください。</p>
   <form id="contactForm">
     <input type="hidden" name="site_id" value="site02">
     <div class="field">

@@ -32,9 +32,19 @@
   }
   h1::before { content: "🌿 "; }
   .sub {
-    margin: 0 0 28px;
+    margin: 0 0 6px;
     font-size: 13px;
     color: #7c8f70;
+  }
+  .notice {
+    margin: 0 0 24px;
+    padding: 10px 14px;
+    background: #fdecea;
+    border: 1px solid #e08a75;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #a13f2b;
   }
   .field { margin-bottom: 18px; }
   label {
@@ -83,6 +93,7 @@
 <div class="card">
   <h1>お問い合わせ</h1>
   <p class="sub">Site15 へのご相談はこちらから。</p>
+  <p class="notice">本フォームは製品に関するお問い合わせ専用です。営業目的でのお問い合わせは対象外です。</p>
   <form id="contactForm">
     <input type="hidden" name="site_id" value="site15">
     <div class="field">

@@ -23,7 +23,17 @@
     padding: 40px;
   }
   .panel h1 { font-size: 28px; margin: 0 0 12px; }
-  .panel p { font-size: 14px; line-height: 1.7; color: #fecaca; margin: 0; }
+  .panel p { font-size: 14px; line-height: 1.7; color: #fecaca; margin: 0 0 14px; }
+  .panel p.notice {
+    font-size: 13px;
+    font-weight: 800;
+    color: #7f1d1d;
+    background: #fff;
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+  }
   .form-side {
     flex: 1;
     display: flex;
@@ -85,6 +95,7 @@
 <div class="panel">
   <h1>Site18</h1>
   <p>お問い合わせはこちらのフォームから。担当者が内容を確認し、折り返しご連絡いたします。</p>
+  <p class="notice">営業さんからのお電話は大変恐縮ですがご遠慮いただいております。</p>
 </div>
 <div class="form-side">
   <div class="form-inner">
