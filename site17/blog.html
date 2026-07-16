@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SITE17 GAZETTE</title>
+<title>ブログ - SITE17 GAZETTE</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,21 +27,12 @@
   .site-header-inner .brand { font-size: 18px; letter-spacing: 0.05em; color: #4a3c2a; text-decoration: none; }
   .site-header-inner nav a { margin-left: 20px; font-size: 13px; color: #6b5a3f; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #7a1f1f; }
-  main { flex: 1; }
-  .hero { max-width: 640px; margin: 0 auto; padding: 64px 24px 48px; text-align: center; }
-  .hero h1 { font-size: 26px; margin: 0 0 14px; letter-spacing: 0.05em; }
-  .hero p { font-size: 14px; color: #6b5a3f; line-height: 1.9; }
-  .features {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 64px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .feature { background: #f7f0e2; border: 1px solid #b8a488; padding: 20px; text-align: center; }
-  .feature h2 { font-size: 14px; margin: 0 0 8px; letter-spacing: 0.05em; }
-  .feature p { font-size: 12px; color: #6b5a3f; line-height: 1.7; margin: 0; }
+  main { flex: 1; max-width: 640px; margin: 0 auto; padding: 56px 24px; width: 100%; }
+  main h1 { font-size: 22px; margin: 0 0 32px; text-align: center; letter-spacing: 0.05em; }
+  .post { background: #f7f0e2; border: 1px solid #b8a488; padding: 20px 24px; margin-bottom: 18px; }
+  .post time { font-size: 11px; color: #8a7455; letter-spacing: 0.1em; }
+  .post h2 { font-size: 15px; margin: 8px 0 8px; }
+  .post p { font-size: 13px; color: #6b5a3f; line-height: 1.8; margin: 0; }
   footer.site-footer { border-top: 1px solid #b8a488; }
   .site-footer-inner {
     max-width: 960px;
@@ -57,7 +48,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #8a7455; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #7a1f1f; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -65,32 +55,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">SITE17 GAZETTE</a>
     <nav>
-      <a href="/index.html" class="active">ホーム</a>
-      <a href="/blog.html">ブログ</a>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html" class="active">ブログ</a>
       <a href="/contact.html">コンタクト</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>SITE17 GAZETTE</h1>
-    <p>時代を超えて読み継がれる情報誌として、確かな情報をお届けしています。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>創刊以来</h2>
-      <p>長年にわたり読者の皆様に支えられてまいりました。</p>
-    </div>
-    <div class="feature">
-      <h2>寄稿</h2>
-      <p>各分野の識者による寄稿を掲載しています。</p>
-    </div>
-    <div class="feature">
-      <h2>購読</h2>
-      <p>定期購読のお申し込みも承っております。</p>
-    </div>
-  </div>
+  <h1>バックナンバー</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>今月の特集記事</h2>
+    <p>今月号の特集記事をウェブ版でも公開いたしました。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>読者投稿欄のご紹介</h2>
+    <p>読者の皆様からの投稿を一部ご紹介いたします。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>編集後記</h2>
+    <p>編集部より、今号を振り返っての一言をお届けします。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

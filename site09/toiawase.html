@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせ - Site09</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #fff;
+    font-family: "Georgia", "Yu Mincho", serif;
+    color: #111;
+  }
+  header.site-header { border-bottom: 4px double #111; padding: 20px 0 14px; text-align: center; }
+  header.site-header .brand { font-size: 26px; letter-spacing: 0.02em; text-decoration: none; color: #111; }
+  header.site-header nav { margin-top: 10px; }
+  header.site-header nav a { margin: 0 12px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #555; text-decoration: none; }
+  header.site-header nav a:hover, header.site-header nav a.active { color: #111; }
+  .masthead { border-bottom: 4px double #111; padding: 28px 20px 14px; text-align: center; }
+  .wrap {
+    max-width: 520px;
+    margin: 36px auto;
+    padding: 0 20px 40px;
+  }
+  .intro {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #333;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+    padding: 14px 0;
+    margin-bottom: 28px;
+  }
+  .notice {
+    font-size: 13px;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    background: #111;
+    margin: -20px 0 28px;
+    padding: 8px 14px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .field {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 8px;
+  }
+  label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 4px 0;
+    border: none;
+    font-size: 15px;
+    font-family: inherit;
+    background: transparent;
+  }
+  input:focus, textarea:focus { outline: none; }
+  textarea { resize: vertical; }
+  .btn-row { text-align: center; margin-top: 28px; }
+  button {
+    padding: 10px 40px;
+    background: #111;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+  }
+  button:hover { background: #333; }
+  #result {
+    margin-top: 16px;
+    font-size: 13px;
+    text-align: center;
+    color: #111;
+  }
+  footer.site-footer { border-top: 4px double #111; padding: 20px; text-align: center; }
+  footer.site-footer nav a { margin: 0 12px; font-size: 11px; letter-spacing: 0.1em; color: #555; text-decoration: none; }
+  footer.site-footer nav a:hover { color: #111; }
+  footer.site-footer p { margin: 10px 0 0; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/index.html">Site09 通信</a>
+  <nav>
+    <a href="/index.html">ホーム</a>
+    <a href="/blog.html">ブログ</a>
+    <a href="/toiawase.html" class="active">お問い合わせ</a>
+  </nav>
+</header>
+<div class="wrap">
+  <p class="intro">本フォームは Site09 へのお問い合わせ窓口です。必要事項をご記入のうえ、下部の送信ボタンを押してください。</p>
+  <p class="notice">上記に該当しない押し売りお断りの旨、ご了承のうえお問い合わせください。</p>
+  <form id="contactForm">
+    <input type="hidden" name="site_id" value="site09">
+    <div class="field">
+      <label>会社名</label>
+      <input type="text" name="company">
+    </div>
+    <div class="field">
+      <label>お名前（必須）</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="field">
+      <label>メールアドレス（必須）</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="field">
+      <label>お問い合わせ内容</label>
+      <textarea name="message" rows="5"></textarea>
+    </div>
+    <div class="btn-row">
+      <button type="submit">送信</button>
+    </div>
+  </form>
+  <p id="result"></p>
+</div>
+
+<footer class="site-footer">
+  <nav>
+    <a href="/index.html">ホーム</a>
+    <a href="/blog.html">ブログ</a>
+    <a href="/toiawase.html">お問い合わせ</a>
+  </nav>
+  <p>&copy; 2026 Site09 通信</p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.style.display = 'none';
+
+  const data = Object.fromEntries(new FormData(form));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>

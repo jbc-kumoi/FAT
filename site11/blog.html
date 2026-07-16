@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site11</title>
+<title>ブログ - Site11</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,21 +27,12 @@
   .site-header-inner .brand { font-weight: 600; font-size: 16px; letter-spacing: 0.06em; color: #2b2b26; text-decoration: none; }
   .site-header-inner nav a { margin-left: 22px; font-size: 13px; color: #6b6b60; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #a9866a; }
-  main { flex: 1; }
-  .hero { max-width: 640px; margin: 0 auto; padding: 80px 24px 56px; }
-  .hero h1 { font-size: 26px; font-weight: 300; letter-spacing: 0.06em; margin: 0 0 16px; color: #2b2b26; }
-  .hero p { font-size: 14px; color: #6b6b60; line-height: 1.9; }
-  .features {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 72px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-  .feature { border-top: 2px solid #a9866a; padding-top: 14px; }
-  .feature h2 { font-size: 14px; font-weight: 500; margin: 0 0 8px; color: #2b2b26; }
-  .feature p { font-size: 12px; color: #8a8a80; line-height: 1.7; margin: 0; }
+  main { flex: 1; max-width: 640px; margin: 0 auto; padding: 56px 24px; width: 100%; }
+  main h1 { font-size: 22px; font-weight: 300; letter-spacing: 0.06em; margin: 0 0 32px; color: #2b2b26; }
+  .post { border-top: 1px solid #e5e2d8; padding: 20px 0; }
+  .post time { font-size: 11px; color: #a9a89e; }
+  .post h2 { font-size: 15px; font-weight: 500; margin: 8px 0 8px; color: #2b2b26; }
+  .post p { font-size: 13px; color: #6b6b60; line-height: 1.8; margin: 0; }
   footer.site-footer { border-top: 1px solid #e5e2d8; }
   .site-footer-inner {
     max-width: 960px;
@@ -57,7 +48,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #8a8a80; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #a9866a; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -65,32 +55,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">Site11</a>
     <nav>
-      <a href="/index.html" class="active">ホーム</a>
-      <a href="/blog.html">ブログ</a>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html" class="active">ブログ</a>
       <a href="/contact.html">問い合わせ</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>シンプルであること</h1>
-    <p>削ぎ落とされた道具とプロダクトを通じて、静かで心地よい暮らしを提案しています。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>素材</h2>
-      <p>厳選した素材のみを使用しています。</p>
-    </div>
-    <div class="feature">
-      <h2>デザイン</h2>
-      <p>飽きのこない、長く使える形を追求しています。</p>
-    </div>
-    <div class="feature">
-      <h2>丁寧さ</h2>
-      <p>一つひとつ丁寧にお届けしています。</p>
-    </div>
-  </div>
+  <h1>ブログ</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>新しい定番アイテムのご紹介</h2>
+    <p>長く愛用いただける新しい定番アイテムが加わりました。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>素材へのこだわり</h2>
+    <p>選び抜いた素材について、担当者が語ります。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>暮らしの中の道具たち</h2>
+    <p>日々の暮らしに寄り添う道具のあり方を考えました。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

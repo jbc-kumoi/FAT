@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SITE10</title>
+<title>BLOG - SITE10</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,21 +27,12 @@
   .site-header-inner .brand { font-size: 16px; color: #00e5ff; text-decoration: none; letter-spacing: 0.05em; }
   .site-header-inner nav a { margin-left: 20px; font-size: 13px; color: #8a8ac0; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #ff2a9d; }
-  main { flex: 1; }
-  .hero { max-width: 640px; margin: 0 auto; padding: 72px 24px 48px; text-align: center; }
-  .hero h1 { font-size: 26px; margin: 0 0 14px; color: #00e5ff; text-shadow: 0 0 10px rgba(0,229,255,0.8); letter-spacing: 0.05em; }
-  .hero p { font-size: 13px; color: #8a8ac0; line-height: 1.8; }
-  .features {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 72px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-  .feature { background: #0b0b16; border: 1px solid #ff2a9d; border-radius: 8px; padding: 20px; }
-  .feature h2 { font-size: 13px; margin: 0 0 8px; color: #ff2a9d; letter-spacing: 0.05em; }
-  .feature p { font-size: 12px; color: #8a8ac0; line-height: 1.6; margin: 0; }
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 56px 24px; width: 100%; }
+  main h1 { font-size: 20px; margin: 0 0 28px; color: #00e5ff; text-shadow: 0 0 10px rgba(0,229,255,0.8); }
+  .post { background: #0b0b16; border: 1px solid #ff2a9d; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+  .post time { font-size: 11px; color: #6e2a9d; }
+  .post h2 { font-size: 14px; margin: 6px 0 8px; color: #ff2a9d; }
+  .post p { font-size: 13px; color: #8a8ac0; line-height: 1.7; margin: 0; }
   footer.site-footer { border-top: 1px solid #ff2a9d; }
   .site-footer-inner {
     max-width: 960px;
@@ -57,7 +48,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #8a8ac0; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #ff2a9d; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -65,32 +55,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">SITE10</a>
     <nav>
-      <a href="/index.html" class="active">HOME</a>
-      <a href="/blog.html">BLOG</a>
+      <a href="/index.html">HOME</a>
+      <a href="/blog.html" class="active">BLOG</a>
       <a href="/inquiry-form.html">Inquiry Form</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>&gt; SITE10.SYS</h1>
-    <p>次世代のデジタル体験をお届けするプラットフォームです。最新情報はブログで随時更新中。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>Fast</h2>
-      <p>圧倒的な速度で処理を実行します。</p>
-    </div>
-    <div class="feature">
-      <h2>Secure</h2>
-      <p>強固なセキュリティで安全に運用できます。</p>
-    </div>
-    <div class="feature">
-      <h2>Connect</h2>
-      <p>あらゆるシステムとシームレスに連携します。</p>
-    </div>
-  </div>
+  <h1>&gt; log --list</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>v3.0 アップデート実施</h2>
+    <p>処理速度が大幅に向上しました。詳細はリリースノートをご確認ください。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>セキュリティ強化のお知らせ</h2>
+    <p>より安全にご利用いただけるよう、セキュリティ機能を強化しました。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>新パートナー連携を開始</h2>
+    <p>新たなパートナー企業とのシステム連携を開始しました。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

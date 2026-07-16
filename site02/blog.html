@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>site02</title>
+<title>Blog - site02</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,23 +27,13 @@
   .site-header-inner .brand { font-weight: 700; font-size: 16px; color: #4ade80; text-decoration: none; }
   .site-header-inner nav a { margin-left: 24px; font-size: 13px; color: #9ca3af; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #4ade80; }
-  main { flex: 1; }
-  .hero { max-width: 720px; margin: 0 auto; padding: 72px 24px 56px; }
-  .hero h1 { font-size: 22px; margin: 0 0 12px; color: #4ade80; }
-  .hero h1::before { content: "$ "; color: #6b7280; }
-  .hero p { font-size: 14px; color: #9ca3af; line-height: 1.8; max-width: 520px; }
-  .features {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 24px 72px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .feature { background: #16181d; border: 1px solid #2a2e37; border-radius: 6px; padding: 20px; }
-  .feature h2 { font-size: 13px; margin: 0 0 8px; color: #4ade80; }
-  .feature h2::before { content: "# "; color: #6b7280; }
-  .feature p { font-size: 12px; color: #9ca3af; line-height: 1.6; margin: 0; }
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 56px 24px; width: 100%; }
+  main h1 { font-size: 18px; margin: 0 0 28px; color: #4ade80; }
+  main h1::before { content: "$ "; color: #6b7280; }
+  .post { background: #16181d; border: 1px solid #2a2e37; border-radius: 6px; padding: 20px 24px; margin-bottom: 16px; }
+  .post time { font-size: 11px; color: #6b7280; }
+  .post h2 { font-size: 14px; margin: 6px 0 8px; color: #e5e7eb; }
+  .post p { font-size: 13px; color: #9ca3af; line-height: 1.7; margin: 0; }
   footer.site-footer { background: #16181d; border-top: 1px solid #2a2e37; }
   .site-footer-inner {
     max-width: 960px;
@@ -59,7 +49,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #6b7280; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #4ade80; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -67,32 +56,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">site02</a>
     <nav>
-      <a href="/index.html" class="active">Home</a>
-      <a href="/blog.html">Blog</a>
+      <a href="/index.html">Home</a>
+      <a href="/blog.html" class="active">Blog</a>
       <a href="/form.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>whoami --site02</h1>
-    <p>開発者向けのツールとドキュメントを提供しています。導入方法や活用事例はブログで随時公開中です。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>API</h2>
-      <p>シンプルなAPIで既存システムに素早く組み込めます。</p>
-    </div>
-    <div class="feature">
-      <h2>Docs</h2>
-      <p>実装例つきのドキュメントで導入をサポートします。</p>
-    </div>
-    <div class="feature">
-      <h2>Support</h2>
-      <p>不明点があればお問い合わせフォームからご連絡ください。</p>
-    </div>
-  </div>
+  <h1>changelog</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>v2.3.0 をリリースしました</h2>
+    <p>パフォーマンス改善とバグ修正を含むアップデートです。詳細は次回の記事でご紹介します。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>導入事例: 開発チームでの活用</h2>
+    <p>実際にご利用いただいているチームの活用方法をまとめました。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>ドキュメントを更新しました</h2>
+    <p>よくいただくご質問をもとに、ドキュメントの内容を整理・追加しました。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

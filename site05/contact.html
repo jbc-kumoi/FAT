@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせ - Site05</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff1f5;
+    font-family: "Hiragino Maru Gothic ProN", "Rounded Mplus 1c", -apple-system, sans-serif;
+    color: #6b4a4a;
+  }
+  header.site-header { background: #fffaf5; border-bottom: 2px solid #ffd6e0; }
+  .site-header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header-inner .brand { font-weight: 700; font-size: 18px; color: #f472a0; text-decoration: none; }
+  .site-header-inner nav a { margin-left: 20px; font-size: 14px; color: #a86a7a; text-decoration: none; font-weight: 600; }
+  .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #f472a0; }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+  footer.site-footer { background: #fffaf5; border-top: 2px solid #ffd6e0; }
+  .site-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #a86a7a;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .site-footer-inner nav a { margin-right: 16px; color: #a86a7a; text-decoration: none; }
+  .site-footer-inner nav a:hover { color: #f472a0; }
+  .card {
+    width: 100%;
+    max-width: 440px;
+    margin: 24px;
+    background: #fffaf5;
+    border-radius: 32px;
+    box-shadow: 0 12px 0 #ffd6e0, 0 12px 24px rgba(0,0,0,0.06);
+    padding: 36px 32px;
+  }
+  h1 {
+    font-size: 24px;
+    margin: 0 0 4px;
+    color: #f472a0;
+    text-align: center;
+  }
+  .sub {
+    margin: 0 0 4px;
+    font-size: 13px;
+    text-align: center;
+    color: #c58a9a;
+  }
+  .notice {
+    margin: 0 0 24px;
+    padding: 10px 14px;
+    text-align: center;
+    background: #ffe4e9;
+    border: 2px solid #f472a0;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #d6336c;
+  }
+  .field { margin-bottom: 16px; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #e0658a;
+  }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #ffd6e0;
+    border-radius: 16px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #f472a0;
+  }
+  textarea { resize: vertical; }
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #f472a0;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #d94f80;
+  }
+  button:hover { background: #ec6ba0; }
+  #result {
+    margin-top: 14px;
+    font-size: 13px;
+    text-align: center;
+    color: #e0658a;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/index.html">Site05</a>
+    <nav>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html">ブログ</a>
+      <a href="/contact.html" class="active">問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <h1>♡ お問い合わせ ♡</h1>
+  <p class="sub">Site05 へのご連絡はこちらからどうぞ！</p>
+  <p class="notice">大変恐縮ですが、セールス目的でのご連絡はお控えいただきますようお願いいたします。</p>
+  <form id="contactForm">
+    <input type="hidden" name="site_id" value="site05">
+    <div class="field">
+      <label>会社名</label>
+      <input type="text" name="company">
+    </div>
+    <div class="field">
+      <label>お名前 ◎必須</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="field">
+      <label>メールアドレス ◎必須</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="field">
+      <label>お問い合わせ内容</label>
+      <textarea name="message" rows="5"></textarea>
+    </div>
+    <button type="submit">送信する ♪</button>
+  </form>
+  <p id="result"></p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html">ブログ</a>
+      <a href="/contact.html">問い合わせ</a>
+    </nav>
+    <p>&copy; 2026 Site05</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.style.display = 'none';
+
+  const data = Object.fromEntries(new FormData(form));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>

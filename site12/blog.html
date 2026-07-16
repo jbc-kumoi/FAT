@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SITE12</title>
+<title>BLOG - SITE12</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,21 +27,12 @@
   .site-header-inner .brand { font-weight: 900; font-size: 18px; color: #fef200; text-decoration: none; text-transform: uppercase; }
   .site-header-inner nav a { margin-left: 20px; font-size: 13px; color: #fff; text-decoration: none; font-weight: 900; text-transform: uppercase; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #fef200; }
-  main { flex: 1; }
-  .hero { max-width: 720px; margin: 0 auto; padding: 64px 24px 48px; text-align: center; }
-  .hero h1 { font-size: 36px; font-weight: 900; text-transform: uppercase; margin: 0 0 14px; }
-  .hero p { font-size: 15px; font-weight: 700; max-width: 480px; margin: 0 auto; line-height: 1.7; }
-  .features {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 24px 64px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-  .feature { background: #fff; border: 5px solid #000; padding: 20px; }
-  .feature h2 { font-size: 15px; font-weight: 900; text-transform: uppercase; margin: 0 0 8px; }
-  .feature p { font-size: 12px; font-weight: 700; line-height: 1.6; margin: 0; }
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 48px 24px; width: 100%; }
+  main h1 { font-size: 30px; font-weight: 900; text-transform: uppercase; margin: 0 0 28px; }
+  .post { background: #fff; border: 5px solid #000; padding: 20px 24px; margin-bottom: 18px; }
+  .post time { font-size: 12px; font-weight: 900; }
+  .post h2 { font-size: 16px; font-weight: 900; margin: 6px 0 8px; text-transform: uppercase; }
+  .post p { font-size: 13px; font-weight: 700; line-height: 1.6; margin: 0; }
   footer.site-footer { background: #000; }
   .site-footer-inner {
     max-width: 960px;
@@ -59,7 +50,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #fff; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #fef200; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -67,32 +57,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">SITE12</a>
     <nav>
-      <a href="/index.html" class="active">Home</a>
-      <a href="/blog.html">Blog</a>
+      <a href="/index.html">Home</a>
+      <a href="/blog.html" class="active">Blog</a>
       <a href="/form.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>MAKE NOISE</h1>
-    <p>目立つこと、伝わることを追求したプロダクトを作っています。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>Bold</h2>
-      <p>妥協のない大胆なデザインが特徴です。</p>
-    </div>
-    <div class="feature">
-      <h2>Raw</h2>
-      <p>飾らないストレートな表現にこだわっています。</p>
-    </div>
-    <div class="feature">
-      <h2>Loud</h2>
-      <p>埋もれないブランド作りをサポートします。</p>
-    </div>
-  </div>
+  <h1>Blog</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>NEW DROP: 新作リリース</h2>
+    <p>今シーズンの新作をリリースしました！詳しくはブログをチェック。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>コラボ企画始動</h2>
+    <p>気になるコラボ企画がスタートしました。続報をお待ちください。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>イベント開催決定</h2>
+    <p>ファン待望のイベント開催が決定しました！</p>
+  </article>
 </main>
 
 <footer class="site-footer">

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせフォーム - Site04</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #eef1f5;
+    font-family: "Yu Mincho", "Georgia", serif;
+    color: #1e293b;
+  }
+  header.site-header {
+    background: #0f2a4a;
+    color: #fff;
+    padding: 20px 0;
+  }
+  .site-header-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .site-header-inner .brand-row h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.08em; }
+  .site-header-inner nav { margin-top: 12px; }
+  .site-header-inner nav a { margin: 0 12px; font-size: 12px; color: #9db3cc; text-decoration: none; letter-spacing: 0.05em; }
+  .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #fff; }
+  .wrap {
+    max-width: 560px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    padding: 36px 40px;
+  }
+  .wrap > p.intro {
+    font-size: 13px;
+    color: #475569;
+    margin: 0 0 12px;
+    line-height: 1.7;
+    border-left: 3px solid #0f2a4a;
+    padding-left: 12px;
+  }
+  .wrap > p.notice {
+    font-size: 13px;
+    font-weight: 700;
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    margin: 0 0 24px;
+    padding: 10px 14px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  table td { padding: 12px 0; vertical-align: top; }
+  table td.label {
+    width: 160px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f2a4a;
+    padding-top: 20px;
+  }
+  table td.label span.req { color: #b91c1c; margin-left: 4px; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #94a3b8;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fdfdfd;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #0f2a4a;
+  }
+  textarea { resize: vertical; }
+  .btn-row { text-align: center; margin-top: 20px; }
+  button {
+    padding: 12px 48px;
+    background: #0f2a4a;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+  button:hover { background: #163e69; }
+  #result {
+    margin-top: 16px;
+    font-size: 13px;
+    text-align: center;
+    color: #166534;
+  }
+  footer.site-footer { background: #0f2a4a; color: #9db3cc; padding: 20px 0; }
+  .site-footer-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .site-footer-inner nav a { margin: 0 10px; color: #9db3cc; text-decoration: none; }
+  .site-footer-inner nav a:hover { color: #fff; }
+  .site-footer-inner p { margin: 10px 0 0; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="brand-row"><h1>SITE04 CORPORATE</h1></div>
+    <nav>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html">ブログ</a>
+      <a href="/toiawase.html" class="active">お問い合わせフォーム</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <p class="intro">お問い合わせいただきありがとうございます。下記フォームに必要事項をご記入の上、送信ボタンを押してください。担当者より折り返しご連絡いたします。</p>
+  <p class="notice">弊社では日頃より営業電話はご遠慮いただいておりますので、あらかじめご了承ください。</p>
+  <form id="contactForm">
+    <input type="hidden" name="site_id" value="site04">
+    <table>
+      <tr>
+        <td class="label">会社名</td>
+        <td><input type="text" name="company"></td>
+      </tr>
+      <tr>
+        <td class="label">お名前<span class="req">必須</span></td>
+        <td><input type="text" name="name" required></td>
+      </tr>
+      <tr>
+        <td class="label">メールアドレス<span class="req">必須</span></td>
+        <td><input type="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td class="label">お問い合わせ内容</td>
+        <td><textarea name="message" rows="6"></textarea></td>
+      </tr>
+    </table>
+    <div class="btn-row">
+      <button type="submit">送信</button>
+    </div>
+  </form>
+  <p id="result"></p>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html">ブログ</a>
+      <a href="/toiawase.html">お問い合わせフォーム</a>
+    </nav>
+    <p>&copy; 2026 SITE04 CORPORATE</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.style.display = 'none';
+
+  const data = Object.fromEntries(new FormData(form));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>

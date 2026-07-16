@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site05</title>
+<title>ブログ - Site05</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,21 +27,12 @@
   .site-header-inner .brand { font-weight: 700; font-size: 18px; color: #f472a0; text-decoration: none; }
   .site-header-inner nav a { margin-left: 20px; font-size: 14px; color: #a86a7a; text-decoration: none; font-weight: 600; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #f472a0; }
-  main { flex: 1; }
-  .hero { max-width: 720px; margin: 0 auto; padding: 64px 24px 48px; text-align: center; }
-  .hero h1 { font-size: 28px; margin: 0 0 12px; color: #f472a0; }
-  .hero p { font-size: 15px; color: #8a6070; max-width: 480px; margin: 0 auto; line-height: 1.8; }
-  .features {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 24px 64px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-  .feature { background: #fffaf5; border-radius: 20px; padding: 22px; box-shadow: 0 6px 0 #ffd6e0; }
-  .feature h2 { font-size: 14px; font-weight: 700; margin: 0 0 8px; color: #f472a0; }
-  .feature p { font-size: 12px; color: #8a6070; line-height: 1.6; margin: 0; }
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 48px 24px; width: 100%; }
+  main h1 { font-size: 24px; margin: 0 0 28px; color: #f472a0; text-align: center; }
+  .post { background: #fffaf5; border-radius: 20px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 6px 0 #ffd6e0; }
+  .post time { font-size: 12px; color: #c58a9a; }
+  .post h2 { font-size: 15px; margin: 6px 0 8px; color: #e0658a; }
+  .post p { font-size: 13px; color: #8a6070; line-height: 1.7; margin: 0; }
   footer.site-footer { background: #fffaf5; border-top: 2px solid #ffd6e0; }
   .site-footer-inner {
     max-width: 960px;
@@ -57,7 +48,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #a86a7a; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #f472a0; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -65,32 +55,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">Site05</a>
     <nav>
-      <a href="/index.html" class="active">ホーム</a>
-      <a href="/blog.html">ブログ</a>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html" class="active">ブログ</a>
       <a href="/contact.html">問い合わせ</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>Site05 へようこそ ♡</h1>
-    <p>かわいい雑貨と暮らしを彩るアイテムをお届けしています。新作情報はブログでチェックしてね。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>新作アイテム</h2>
-      <p>季節ごとの新作を続々ご紹介しています。</p>
-    </div>
-    <div class="feature">
-      <h2>ギフト対応</h2>
-      <p>大切な人へのプレゼントにもぴったりです。</p>
-    </div>
-    <div class="feature">
-      <h2>お客様の声</h2>
-      <p>たくさんの嬉しいお声をいただいています。</p>
-    </div>
-  </div>
+  <h1>ブログ</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>夏の新作が入荷しました♪</h2>
+    <p>爽やかなカラーの新作アイテムが揃いました。ぜひチェックしてください。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>ギフトラッピングを始めました</h2>
+    <p>大切な方へのプレゼントに、かわいいラッピングをご用意しました。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>お客様の声をご紹介します</h2>
+    <p>いつもご利用いただきありがとうございます。嬉しいお声を一部ご紹介します。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SITE07</title>
+<title>Blog - SITE07</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,21 +27,12 @@
   .site-header-inner .brand { font-size: 18px; letter-spacing: 0.1em; color: #d8b56a; text-decoration: none; }
   .site-header-inner nav a { margin-left: 24px; font-size: 13px; letter-spacing: 0.05em; color: #8a7854; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #d8b56a; }
-  main { flex: 1; }
-  .hero { max-width: 640px; margin: 0 auto; padding: 80px 24px 56px; text-align: center; }
-  .hero h1 { font-size: 28px; font-weight: 400; letter-spacing: 0.15em; margin: 0 0 16px; color: #d8b56a; }
-  .hero p { font-size: 14px; color: #b3a888; line-height: 1.9; letter-spacing: 0.03em; }
-  .features {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 72px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .feature { border: 1px solid #4a3d24; padding: 24px; text-align: center; }
-  .feature h2 { font-size: 14px; letter-spacing: 0.1em; margin: 0 0 10px; color: #d8b56a; font-weight: 400; }
-  .feature p { font-size: 12px; color: #8a7854; line-height: 1.7; margin: 0; }
+  main { flex: 1; max-width: 640px; margin: 0 auto; padding: 64px 24px; width: 100%; }
+  main h1 { font-size: 22px; letter-spacing: 0.1em; margin: 0 0 32px; text-align: center; color: #d8b56a; font-weight: 400; }
+  .post { border: 1px solid #4a3d24; padding: 22px 26px; margin-bottom: 18px; }
+  .post time { font-size: 11px; color: #6b5f47; letter-spacing: 0.1em; }
+  .post h2 { font-size: 15px; margin: 8px 0 10px; color: #d8b56a; font-weight: 400; letter-spacing: 0.05em; }
+  .post p { font-size: 13px; color: #b3a888; line-height: 1.8; margin: 0; }
   footer.site-footer { border-top: 1px solid #4a3d24; }
   .site-footer-inner {
     max-width: 960px;
@@ -58,7 +49,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #6b5f47; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #d8b56a; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -66,32 +56,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">SITE07</a>
     <nav>
-      <a href="/index.html" class="active">Home</a>
-      <a href="/blog.html">Blog</a>
+      <a href="/index.html">Home</a>
+      <a href="/blog.html" class="active">Blog</a>
       <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>SITE07</h1>
-    <p>上質な体験をお届けするために、細部までこだわり抜いたサービスをご用意しております。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>Craftsmanship</h2>
-      <p>一つひとつ丁寧に仕上げております。</p>
-    </div>
-    <div class="feature">
-      <h2>Heritage</h2>
-      <p>長年培った技術と伝統を受け継いでいます。</p>
-    </div>
-    <div class="feature">
-      <h2>Service</h2>
-      <p>専任スタッフが丁寧にご案内いたします。</p>
-    </div>
-  </div>
+  <h1>Journal</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>新作コレクションのご案内</h2>
+    <p>今シーズンの新作をご紹介いたします。詳細は追ってお知らせいたします。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>職人へのインタビュー</h2>
+    <p>ものづくりへのこだわりについて、担当職人が語ります。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>展示会開催のお知らせ</h2>
+    <p>今年も展示会を開催いたします。詳細は改めてご案内いたします。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

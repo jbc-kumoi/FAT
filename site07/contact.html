@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせ - Site07</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0b0b0d;
+    font-family: "Times New Roman", "Yu Mincho", serif;
+    color: #e8e2d0;
+  }
+  header.site-header { border-bottom: 1px solid #4a3d24; }
+  .site-header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header-inner .brand { font-size: 18px; letter-spacing: 0.1em; color: #d8b56a; text-decoration: none; }
+  .site-header-inner nav a { margin-left: 24px; font-size: 13px; letter-spacing: 0.05em; color: #8a7854; text-decoration: none; }
+  .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #d8b56a; }
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+  footer.site-footer { border-top: 1px solid #4a3d24; }
+  .site-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6b5f47;
+    flex-wrap: wrap;
+    gap: 12px;
+    letter-spacing: 0.05em;
+  }
+  .site-footer-inner nav a { margin-right: 16px; color: #6b5f47; text-decoration: none; }
+  .site-footer-inner nav a:hover { color: #d8b56a; }
+  .card {
+    width: 100%;
+    max-width: 480px;
+    margin: 24px;
+    padding: 44px 44px;
+    border: 1px solid #b08d57;
+    position: relative;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid #4a3d24;
+    pointer-events: none;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin: 0 0 4px;
+    color: #d8b56a;
+  }
+  .sub {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: #8a7854;
+    margin: 0 0 10px;
+  }
+  .notice {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #ff6b6b;
+    margin: 0 0 28px;
+    padding: 10px 14px;
+    border: 1px solid #ff6b6b;
+  }
+  .field { margin-bottom: 20px; }
+  label {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    color: #d8b56a;
+  }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px 4px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #4a3d24;
+    font-size: 14px;
+    font-family: inherit;
+    color: #f2ede0;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: #d8b56a;
+  }
+  textarea { resize: vertical; }
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: transparent;
+    color: #d8b56a;
+    border: 1px solid #b08d57;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+  }
+  button:hover { background: #b08d57; color: #0b0b0d; }
+  #result {
+    margin-top: 18px;
+    font-size: 13px;
+    text-align: center;
+    color: #d8b56a;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/index.html">SITE07</a>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="card">
+  <h1>Contact</h1>
+  <p class="sub">S I T E 0 7</p>
+  <p class="notice">本フォームからのお問い合わせであっても、広告掲載禁止とさせていただいております。</p>
+  <form id="contactForm">
+    <input type="hidden" name="site_id" value="site07">
+    <div class="field">
+      <label>会社名</label>
+      <input type="text" name="company">
+    </div>
+    <div class="field">
+      <label>お名前（必須）</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="field">
+      <label>メールアドレス（必須）</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="field">
+      <label>お問い合わせ内容</label>
+      <textarea name="message" rows="5"></textarea>
+    </div>
+    <button type="submit">送信する</button>
+  </form>
+  <p id="result"></p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <p>&copy; 2026 SITE07</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.style.display = 'none';
+
+  const data = Object.fromEntries(new FormData(form));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>

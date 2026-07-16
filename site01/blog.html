@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site01</title>
+<title>ブログ - Site01</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,31 +27,24 @@
   .site-header-inner .brand { font-weight: 700; font-size: 18px; color: #111827; text-decoration: none; }
   .site-header-inner nav a { margin-left: 24px; font-size: 14px; color: #374151; text-decoration: none; font-weight: 500; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #2563eb; }
-  main { flex: 1; }
-  .hero {
-    max-width: 960px;
+  main {
+    flex: 1;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 72px 24px 56px;
-    text-align: center;
+    padding: 56px 24px;
+    width: 100%;
   }
-  .hero h1 { font-size: 32px; font-weight: 800; margin: 0 0 12px; color: #111827; }
-  .hero p { font-size: 16px; color: #6b7280; max-width: 560px; margin: 0 auto 28px; line-height: 1.7; }
-  .features {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 24px 72px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .feature {
+  main h1 { font-size: 26px; font-weight: 800; margin: 0 0 32px; color: #111827; }
+  .post {
     background: #fff;
     border-radius: 12px;
-    padding: 24px;
+    padding: 24px 28px;
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    margin-bottom: 20px;
   }
-  .feature h2 { font-size: 15px; font-weight: 700; margin: 0 0 8px; color: #111827; }
-  .feature p { font-size: 13px; color: #6b7280; line-height: 1.6; margin: 0; }
+  .post time { font-size: 12px; color: #9ca3af; }
+  .post h2 { font-size: 17px; font-weight: 700; margin: 6px 0 10px; color: #111827; }
+  .post p { font-size: 14px; color: #6b7280; line-height: 1.7; margin: 0; }
   footer.site-footer { background: #fff; border-top: 1px solid #e5e7eb; }
   .site-footer-inner {
     max-width: 960px;
@@ -67,9 +60,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #6b7280; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #2563eb; }
-  @media (max-width: 640px) {
-    .features { grid-template-columns: 1fr; }
-  }
 </style>
 </head>
 <body>
@@ -77,32 +67,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">Site01</a>
     <nav>
-      <a href="/index.html" class="active">ホーム</a>
-      <a href="/blog.html">ブログ</a>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html" class="active">ブログ</a>
       <a href="/contact.html">お問い合わせ</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>Site01 へようこそ</h1>
-    <p>私たちは、お客様の課題にあわせたサービスをご提供しています。詳しいご相談は、お問い合わせフォームよりお気軽にどうぞ。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>サービス紹介</h2>
-      <p>お客様のニーズに合わせたソリューションを幅広くご用意しています。</p>
-    </div>
-    <div class="feature">
-      <h2>実績</h2>
-      <p>これまで多くのお客様にご利用いただき、高い評価をいただいています。</p>
-    </div>
-    <div class="feature">
-      <h2>サポート体制</h2>
-      <p>導入前から導入後まで、専任担当がしっかりサポートいたします。</p>
-    </div>
-  </div>
+  <h1>ブログ</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>サービスをリニューアルしました</h2>
+    <p>このたび、より使いやすくなるようサービス内容を見直しました。詳細は今後の記事で順次ご紹介していきます。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>お客様導入事例のご紹介</h2>
+    <p>実際にご利用いただいているお客様の事例をもとに、活用のポイントをまとめました。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>よくあるご質問を更新しました</h2>
+    <p>お問い合わせの多かった内容を中心に、よくあるご質問ページを更新いたしました。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

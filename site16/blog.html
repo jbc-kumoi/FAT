@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site16</title>
+<title>Blog - Site16</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,33 +27,12 @@
   .site-header-inner .brand { font-weight: 700; font-size: 17px; color: #4f46e5; text-decoration: none; }
   .site-header-inner nav a { margin-left: 20px; font-size: 14px; color: #4b5563; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #4f46e5; }
-  main { flex: 1; }
-  .hero { max-width: 640px; margin: 0 auto; padding: 64px 24px 48px; text-align: center; }
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #4f46e5;
-    background: #eef2ff;
-    padding: 4px 10px;
-    border-radius: 999px;
-    margin-bottom: 14px;
-  }
-  .hero h1 { font-size: 28px; font-weight: 700; margin: 0 0 14px; }
-  .hero p { font-size: 15px; color: #6b7280; line-height: 1.8; }
-  .features {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 24px 64px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .feature { background: #fff; border-radius: 14px; padding: 22px; box-shadow: 0 10px 24px rgba(79,70,229,0.1); border: 1px solid #e0e0fb; }
-  .feature h2 { font-size: 14px; font-weight: 700; margin: 0 0 8px; color: #4f46e5; }
-  .feature p { font-size: 12px; color: #6b7280; line-height: 1.6; margin: 0; }
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 48px 24px; width: 100%; }
+  main h1 { font-size: 24px; margin: 0 0 28px; }
+  .post { background: #fff; border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 10px 24px rgba(79,70,229,0.1); border: 1px solid #e0e0fb; }
+  .post time { font-size: 12px; color: #9ca3af; }
+  .post h2 { font-size: 15px; margin: 6px 0 8px; color: #4f46e5; }
+  .post p { font-size: 13px; color: #6b7280; line-height: 1.7; margin: 0; }
   footer.site-footer { background: #fff; border-top: 1px solid #e0e0fb; }
   .site-footer-inner {
     max-width: 960px;
@@ -69,7 +48,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #6b7280; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #4f46e5; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -77,33 +55,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">Site16</a>
     <nav>
-      <a href="/index.html" class="active">Home</a>
-      <a href="/blog.html">Blog</a>
+      <a href="/index.html">Home</a>
+      <a href="/blog.html" class="active">Blog</a>
       <a href="/contact-form.html">Contact Us</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <span class="badge">SAAS PLATFORM</span>
-    <h1>Site16 へようこそ</h1>
-    <p>チームの生産性を高めるクラウドツールを提供しています。導入事例や最新機能はブログでご紹介中です。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>Integration</h2>
-      <p>既存ツールとスムーズに連携できます。</p>
-    </div>
-    <div class="feature">
-      <h2>Analytics</h2>
-      <p>データに基づいた意思決定をサポートします。</p>
-    </div>
-    <div class="feature">
-      <h2>Team</h2>
-      <p>チームでの共同作業を効率化します。</p>
-    </div>
-  </div>
+  <h1>Blog</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>新機能をリリースしました</h2>
+    <p>チームの生産性をさらに高める新機能を追加しました。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>導入事例: 業務効率化に成功</h2>
+    <p>導入企業様の活用事例をインタビュー形式でご紹介します。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>API連携ガイドを公開</h2>
+    <p>外部サービスとの連携方法をまとめたガイドを公開しました。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

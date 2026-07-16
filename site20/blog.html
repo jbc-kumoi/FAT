@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site20</title>
+<title>ブログ - Site20</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -27,28 +27,20 @@
   .site-header-inner .brand { font-weight: 700; font-size: 17px; color: #1c6ea4; text-decoration: none; }
   .site-header-inner nav a { margin-left: 20px; font-size: 14px; color: #6b93ab; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #1c6ea4; }
-  main { flex: 1; }
-  .hero { max-width: 640px; margin: 0 auto; padding: 64px 24px 48px; text-align: center; }
-  .hero h1 { font-size: 27px; margin: 0 0 14px; color: #1c6ea4; }
-  .hero p { font-size: 14px; color: #4d6c80; line-height: 1.8; }
-  .features {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 24px 64px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-  .feature {
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 48px 24px; width: 100%; }
+  main h1 { font-size: 24px; margin: 0 0 28px; text-align: center; color: #1c6ea4; }
+  .post {
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(10px);
     border: 1px solid #d6ecfa;
     border-radius: 16px;
-    padding: 22px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
     box-shadow: 0 8px 20px rgba(100,160,200,0.1);
   }
-  .feature h2 { font-size: 14px; font-weight: 600; margin: 0 0 8px; color: #1c6ea4; }
-  .feature p { font-size: 12px; color: #4d6c80; line-height: 1.6; margin: 0; }
+  .post time { font-size: 12px; color: #9db8c8; }
+  .post h2 { font-size: 15px; margin: 6px 0 8px; color: #1c6ea4; }
+  .post p { font-size: 13px; color: #4d6c80; line-height: 1.7; margin: 0; }
   footer.site-footer { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border-top: 1px solid #d6ecfa; }
   .site-footer-inner {
     max-width: 960px;
@@ -64,7 +56,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #6b93ab; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #1c6ea4; }
-  @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -72,32 +63,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">Site20</a>
     <nav>
-      <a href="/index.html" class="active">ホーム</a>
-      <a href="/blog.html">ブログ</a>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html" class="active">ブログ</a>
       <a href="/inquiry.html">お問い合わせ</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero">
-    <h1>❄ Site20 へようこそ</h1>
-    <p>澄んだ体験と穏やかなひとときをお届けするサービスです。</p>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <h2>快適さ</h2>
-      <p>細部までこだわった快適な体験をご用意しています。</p>
-    </div>
-    <div class="feature">
-      <h2>清潔感</h2>
-      <p>清潔感のあるサービス提供を心がけています。</p>
-    </div>
-    <div class="feature">
-      <h2>丁寧な対応</h2>
-      <p>一人ひとりに寄り添った対応をいたします。</p>
-    </div>
-  </div>
+  <h1>ブログ</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>新シーズンのご案内</h2>
+    <p>新しいシーズンに向けたご案内を公開いたしました。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>お客様アンケート結果</h2>
+    <p>先日実施したアンケートの結果をご報告いたします。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>スタッフインタビュー</h2>
+    <p>現場スタッフの声をインタビュー形式でご紹介します。</p>
+  </article>
 </main>
 
 <footer class="site-footer">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site19</title>
+<title>ブログ - Site19</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -26,22 +26,13 @@
   .site-header-inner .brand { font-weight: 700; font-size: 17px; color: #0b3d59; text-decoration: none; }
   .site-header-inner nav a { margin-left: 20px; font-size: 14px; color: #5c7a8c; text-decoration: none; }
   .site-header-inner nav a:hover, .site-header-inner nav a.active { color: #0b3d59; }
-  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
-  .hero-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 48px 40px;
-    max-width: 640px;
-    text-align: center;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-    border-top: 6px solid #0b3d59;
-  }
-  .hero-card h1 { font-size: 26px; margin: 0 0 14px; color: #0b3d59; }
-  .hero-card h1::before { content: "⚓ "; }
-  .hero-card p { font-size: 14px; color: #5c7a8c; line-height: 1.8; margin: 0 0 28px; }
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: left; }
-  .feature h2 { font-size: 13px; font-weight: 700; margin: 0 0 6px; color: #0b3d59; }
-  .feature p { font-size: 12px; color: #5c7a8c; line-height: 1.5; margin: 0; }
+  main { flex: 1; max-width: 680px; margin: 0 auto; padding: 48px 24px; width: 100%; }
+  main h1 { font-size: 24px; margin: 0 0 28px; color: #fff; }
+  main h1::before { content: "⚓ "; }
+  .post { background: #fff; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; border-top: 4px solid #0b3d59; }
+  .post time { font-size: 12px; color: #9ca3af; }
+  .post h2 { font-size: 15px; margin: 6px 0 8px; color: #0b3d59; }
+  .post p { font-size: 13px; color: #5c7a8c; line-height: 1.7; margin: 0; }
   footer.site-footer { background: #fff; border-top: 3px solid #0b3d59; }
   .site-footer-inner {
     max-width: 960px;
@@ -57,7 +48,6 @@
   }
   .site-footer-inner nav a { margin-right: 16px; color: #5c7a8c; text-decoration: none; }
   .site-footer-inner nav a:hover { color: #0b3d59; }
-  @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -65,32 +55,30 @@
   <div class="site-header-inner">
     <a class="brand" href="/index.html">Site19</a>
     <nav>
-      <a href="/index.html" class="active">ホーム</a>
-      <a href="/blog.html">ブログ</a>
+      <a href="/index.html">ホーム</a>
+      <a href="/blog.html" class="active">ブログ</a>
       <a href="/inquiry-form.html">お問い合わせフォーム</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero-card">
-    <h1>Site19 へようこそ</h1>
-    <p>港町から世界へ、確かな品質をお届けする海運関連サービスです。</p>
-    <div class="features">
-      <div class="feature">
-        <h2>安全性</h2>
-        <p>厳格な基準に基づいた安全管理を行っています。</p>
-      </div>
-      <div class="feature">
-        <h2>実績</h2>
-        <p>長年培った航路網と実績があります。</p>
-      </div>
-      <div class="feature">
-        <h2>サポート</h2>
-        <p>24時間体制でお客様をサポートします。</p>
-      </div>
-    </div>
-  </div>
+  <h1>ブログ</h1>
+  <article class="post">
+    <time>2026.07.01</time>
+    <h2>新航路が就航しました</h2>
+    <p>新たな航路が就航し、より多くの地域へお届けできるようになりました。</p>
+  </article>
+  <article class="post">
+    <time>2026.06.15</time>
+    <h2>安全講習会を実施しました</h2>
+    <p>スタッフ向けの安全講習会を実施し、体制を強化しました。</p>
+  </article>
+  <article class="post">
+    <time>2026.05.20</time>
+    <h2>お客様への感謝を込めて</h2>
+    <p>いつもご利用いただいているお客様への感謝の思いをお伝えします。</p>
+  </article>
 </main>
 
 <footer class="site-footer">
