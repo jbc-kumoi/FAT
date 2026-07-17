@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせ - Site24</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    background-image:
+      linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+      linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+      linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+      linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a);
+    background-size: 60px 104px;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #e8d9a8;
+  }
+  .card {
+    width: 100%;
+    max-width: 460px;
+    margin: 24px;
+    background: #161616;
+    border: 2px solid #c9a86a;
+    padding: 44px 40px;
+    position: relative;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid #7a6633;
+    pointer-events: none;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.2em;
+    margin: 0 0 6px;
+    color: #d8b56a;
+  }
+  .sub { text-align: center; font-size: 11px; letter-spacing: 0.3em; color: #8a7443; margin: 0 0 10px; }
+  .notice {
+    text-align: center;
+    margin: 0 0 28px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff8a80;
+    border-top: 1px solid #c9a86a;
+    border-bottom: 1px solid #c9a86a;
+  }
+  .field { margin-bottom: 20px; }
+  label { display: block; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 6px; color: #c9a86a; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px 4px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #7a6633;
+    font-size: 14px;
+    font-family: inherit;
+    color: #e8d9a8;
+  }
+  input:focus, textarea:focus { outline: none; border-bottom-color: #d8b56a; }
+  textarea { resize: vertical; }
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: transparent;
+    color: #d8b56a;
+    border: 1px solid #c9a86a;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    cursor: pointer;
+  }
+  button:hover { background: #c9a86a; color: #161616; }
+  #result { margin-top: 18px; font-size: 13px; text-align: center; color: #d8b56a; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>C O N T A C T</h1>
+  <p class="sub">S I T E 2 4</p>
+  <p class="notice">本サイトからの広告出稿は禁止とさせていただいております。</p>
+  <form id="contactForm">
+    <input type="hidden" name="site_id" value="site24">
+    <div class="field">
+      <label>会社名</label>
+      <input type="text" name="company">
+    </div>
+    <div class="field">
+      <label>お名前（必須）</label>
+      <input type="text" name="name" required>
+    </div>
+    <div class="field">
+      <label>メールアドレス（必須）</label>
+      <input type="email" name="email" required>
+    </div>
+    <div class="field">
+      <label>お問い合わせ内容</label>
+      <textarea name="message" rows="5"></textarea>
+    </div>
+    <button type="submit">送信する</button>
+  </form>
+  <p id="result"></p>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.style.display = 'none';
+
+  const data = Object.fromEntries(new FormData(form));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>

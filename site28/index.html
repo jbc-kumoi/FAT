@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お問い合わせ - Site28</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efe6d8;
+    font-family: -apple-system, "Hiragino Sans", "Segoe UI", sans-serif;
+    color: #4a3f2f;
+  }
+  .card {
+    width: 100%;
+    max-width: 440px;
+    margin: 24px;
+    background: #fbf5ea;
+    padding: 0;
+    box-shadow: 0 20px 40px rgba(74,63,47,0.18);
+    clip-path: polygon(0 4%, 50% 0, 100% 4%, 100% 96%, 50% 100%, 0 96%);
+  }
+  .inner { padding: 48px 38px; }
+  h1 { font-size: 23px; margin: 0 0 6px; text-align: center; color: #b5773a; }
+  .sub { text-align: center; margin: 0 0 6px; font-size: 13px; color: #8a7a5e; }
+  .notice {
+    text-align: center;
+    margin: 0 0 24px;
+    padding: 10px 14px;
+    background: #f6e2cf;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #a1462f;
+  }
+  .field { margin-bottom: 18px; }
+  label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; color: #7a6a4e; }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #d8c7a8;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+  }
+  input:focus, textarea:focus { outline: none; border-color: #b5773a; }
+  textarea { resize: vertical; }
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #b5773a;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button:hover { background: #9c622c; }
+  #result { margin-top: 14px; font-size: 13px; text-align: center; color: #b5773a; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="inner">
+    <h1>お問い合わせ</h1>
+    <p class="sub">Site28 へのご相談はこちらから</p>
+    <p class="notice">何卒ご理解のほど、広告は拒否とさせていただきます。</p>
+    <form id="contactForm">
+      <input type="hidden" name="site_id" value="site28">
+      <div class="field">
+        <label>会社名</label>
+        <input type="text" name="company">
+      </div>
+      <div class="field">
+        <label>お名前（必須）</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="field">
+        <label>メールアドレス（必須）</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="field">
+        <label>お問い合わせ内容</label>
+        <textarea name="message" rows="5"></textarea>
+      </div>
+      <button type="submit">送信する</button>
+    </form>
+    <p id="result"></p>
+  </div>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const button = form.querySelector('button[type="submit"]');
+  button.style.display = 'none';
+
+  const data = Object.fromEntries(new FormData(form));
+  const res = await fetch('/api/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
+});
+</script>
+</body>
+</html>

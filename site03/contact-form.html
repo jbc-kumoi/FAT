@@ -64,16 +64,6 @@
     font-size: 14px;
     color: rgba(255,255,255,0.85);
   }
-  .notice {
-    margin: 0 0 24px;
-    padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 800;
-    color: #be123c;
-  }
-  .notice::before { content: "※ "; }
   .field { margin-bottom: 18px; }
   label {
     display: block;
@@ -133,28 +123,6 @@
 <div class="card">
   <h1>Get in touch</h1>
   <p class="sub">Site03 へのお問い合わせはこちらのフォームから。</p>
-  <p class="notice">誠に勝手ながら、当社は営業のご連絡はお断りしております。</p>
-  <form id="contactForm">
-    <input type="hidden" name="site_id" value="site03">
-    <div class="field">
-      <label>会社名</label>
-      <input type="text" name="company">
-    </div>
-    <div class="field">
-      <label>お名前 *</label>
-      <input type="text" name="name" required>
-    </div>
-    <div class="field">
-      <label>メールアドレス *</label>
-      <input type="email" name="email" required>
-    </div>
-    <div class="field">
-      <label>お問い合わせ内容</label>
-      <textarea name="message" rows="5"></textarea>
-    </div>
-    <button type="submit">送信する</button>
-  </form>
-  <p id="result"></p>
 </div>
 </main>
 
@@ -169,21 +137,5 @@
   </div>
 </footer>
 
-<script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const button = form.querySelector('button[type="submit"]');
-  button.style.display = 'none';
-
-  const data = Object.fromEntries(new FormData(form));
-  const res = await fetch('/api/submit', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
-  });
-  document.getElementById('result').textContent = res.ok ? '送信完了しました' : '送信に失敗しました';
-});
-</script>
 </body>
 </html>
